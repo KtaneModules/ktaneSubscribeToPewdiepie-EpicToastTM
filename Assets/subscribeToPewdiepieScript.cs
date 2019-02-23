@@ -148,7 +148,8 @@ public class subscribeToPewdiepieScript : MonoBehaviour {
 
             else
             {
-                StartCoroutine(Strike());
+                taps = 0;
+                Module.HandleStrike();
             }
         }
         
@@ -162,7 +163,8 @@ public class subscribeToPewdiepieScript : MonoBehaviour {
 
             else
             {
-                StartCoroutine(Strike());
+                taps = 0;
+                Module.HandleStrike();
             }
         }
     }
@@ -219,45 +221,8 @@ public class subscribeToPewdiepieScript : MonoBehaviour {
         pewdiepieText.text = "!!COOL!!";
         tseriesText.text = "!!!GG!!!";
 
-        if (tseriesSubs == pewdiepieSubs)
-        {
-            if (taps == 1)
-            {
-                Module.HandlePass();
-                solved = true;
-                DebugMsg("That was right!");
-            }
-
-            else
-                Module.HandleStrike();
-                DebugMsg("You pressed it more than once... STRIKE!");
-        }
-
-        else if (tseriesSubs > pewdiepieSubs)
-        {
-            if (taps > 5)
-            {
-                Module.HandlePass();
-                solved = true;
-                DebugMsg("That was right!");
-            }
-
-            else
-                Module.HandleStrike();
-                DebugMsg("You didn't mash enough... STRIKE!");
-        }
-
-        else
-        {
-            Module.HandlePass();
-            solved = true;
-            DebugMsg("That was right!");
-        }
-    }
-
-    IEnumerator Strike()
-    {
-        taps = 0;
-        yield return new WaitForSeconds(1);
+        Module.HandlePass();
+        solved = true;
+        DebugMsg("That was right!");
     }
 }

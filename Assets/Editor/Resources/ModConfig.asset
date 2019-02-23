@@ -23,4 +23,4 @@ MonoBehaviour:
     PDF: https://ktane.timwi.de/PDF/Subscribe%20To%20Pewdiepie.pdf'
   version: 
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: 4e8dea9c84240244cb1f97c4eb548876, type: 3}
