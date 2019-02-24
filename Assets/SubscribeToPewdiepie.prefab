@@ -3026,6 +3026,8 @@ MonoBehaviour:
   pewdiepieText: {fileID: 102591651544073216}
   tseriesText: {fileID: 102812777677534430}
   gapText: {fileID: 102465960421780196}
+  TwitchHelpMessage: Use !{0} submit 12345 to submit 12345. (Replace 12345 with your
+    answer.)
 --- !u!114 &114283306430210828
 MonoBehaviour:
   m_ObjectHideFlags: 1

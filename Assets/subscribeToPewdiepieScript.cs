@@ -225,4 +225,26 @@ public class subscribeToPewdiepieScript : MonoBehaviour {
         solved = true;
         DebugMsg("That was right!");
     }
+
+    public string TwitchHelpMessage = "Use !{0} submit 12345 to submit 12345. (Replace 12345 with your answer.)";
+    IEnumerator ProcessTwitchCommand(string cmd)
+    {
+        if (cmd.ToLowerInvariant().StartsWith("submit "))
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                while (gapText.text[i] != cmd.Substring(7)[i])
+                {
+                    yield return null;
+                    yield return new KMSelectable[] { topRowSelectables[i] };
+                }
+            }
+
+            yield return null;
+            yield return new KMSelectable[] { submitSelectable };
+        }
+
+        else
+            yield break;
+    }
 }
