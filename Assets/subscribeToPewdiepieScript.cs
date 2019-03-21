@@ -122,12 +122,12 @@ public class subscribeToPewdiepieScript : MonoBehaviour {
         for (int i = 0; i < Bomb.GetBatteryCount(); i++) // rule 5
         {
             int originalSubs = pewdiepieSubs;
-            pewdiepieSubs = (int)(pewdiepieSubs * .95f);
+            pewdiepieSubs = (int)(pewdiepieSubs * .95);
             DebugMsg("The number " + originalSubs + " multiplied by .95 is " + pewdiepieSubs);
         }
 
         if (Bomb.GetSerialNumberLetters().Contains('T') || Bomb.GetSerialNumberLetters().Contains('S') || Bomb.GetSerialNumberLetters().Contains('E') || Bomb.GetSerialNumberLetters().Contains('R') || Bomb.GetSerialNumberLetters().Contains('I'))
-            tseriesSubs = (int)(tseriesSubs * 1.5f);
+            tseriesSubs = (int)(tseriesSubs * 1.5);
 
         DebugMsg("PewDiePie actually has " + pewdiepieSubs + " subscribers and T-Series actually has " + tseriesSubs + " subscribers.");
         if (tseriesSubs >= pewdiepieSubs)
